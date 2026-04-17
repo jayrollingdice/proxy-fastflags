@@ -5,7 +5,7 @@ visibility: hidden
 -->
 
 <h3 align="center">
-  <img src="assets/cartikiss.gif" width="256" alt="Playboi Carti">
+  <img src="assets/carti.jpg" width="256" alt="Playboi Carti">
 </h3>
 
 <h1 align="center">Flag Browser by imgui.cc</h1>

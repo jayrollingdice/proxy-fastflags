@@ -1,6 +1,1 @@
-requests
-dearpygui
-urllib3
-keyboard
-pyperclip
-mitmproxy
+
