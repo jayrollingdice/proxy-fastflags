@@ -23,7 +23,14 @@ visibility: hidden
 
 </div>
 
-A fast, open-source flag browser built for real-time FastFlag editing, preset management, and proxy-based control — no injection required.
+A fast, open-source flag browser built for real-time fastflag editing, preset management, and proxy-based control — no injection required.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9e098aa1-7df7-4629-a169-2cbc5bda85d4" width="30%" />
+  <img src="https://github.com/user-attachments/assets/dae01e22-d59a-4741-8110-948b791903b2" width="30%" />
+  <img src="https://github.com/user-attachments/assets/6446ea74-290e-40d8-9281-edcbbc4fad81" width="30%" />
+</p>
+
 
 ## ✦ How to use
 ### Currently work in progress expect release in early May
