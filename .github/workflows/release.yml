@@ -1,0 +1,57 @@
+name: Release Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.13'
+
+    - name: Install dependencies
+      shell: pwsh
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+        if (Test-Path requirements.txt) { pip install -r requirements.txt }
+
+    - name: Extract FileVersion
+      id: get_version
+      shell: pwsh
+      run: |
+        $content = Get-Content version.txt
+        foreach ($line in $content) {
+          if ($line -match "FileVersion'.*?'(.*?)'") {
+            $version = $matches[1]
+            break
+          }
+        }
+        echo "version=$version" >> $env:GITHUB_OUTPUT
+
+    - name: Build EXE
+      run: pyinstaller main.py --onefile --windowed --icon=favicon.ico --version-file=version.txt --clean --noupx
+
+    - name: Rename EXE
+      shell: pwsh
+      run: |
+        move dist\main.exe proxymenu.exe
+
+    - name: Upload to GitHub Releases
+      uses: softprops/action-gh-release@v2
+      with:
+        name: imgui ${{ steps.get_version.outputs.version }}
+        tag_name: v${{ steps.get_version.outputs.version }}
+        files: proxymenu.exe
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
