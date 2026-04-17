@@ -81,11 +81,11 @@ Create your own fork to start making changes.
 
 <h4 align="center">© 2026 imgui.cc</h4>
 
-[shield-repo-workflow]: https://img.shields.io/github/actions/workflow/status/1ndirect/proxy-fastflags/retype-action.yml?branch=master&label=builds
+[shield-repo-workflow]: https://img.shields.io/github/actions/workflow/status/jayrollingdice/proxy-fastflags/retype-action.yml?branch=master&label=builds
 
 [shield-discord-server]: https://img.shields.io/discord/1241247795470536725?logo=discord&logoColor=white&label=discord&color=4d3dff
 
-[repo-actions]:  https://github.com/1ndirect/proxy-fastflags/actions
+[repo-actions]:  https://github.com/jayrollingdice/proxy-fastflags/actions
 
 [discord-invite]:  https://discord.gg/6zqNQTSkr
 
